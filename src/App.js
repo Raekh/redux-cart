@@ -3,18 +3,27 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import CartContainer from "./components/CartContainer";
 // items
-import cartItems from "./cart-items";
 // redux stuff
+import { Provider } from "react-redux";
+//
+import store from './store';
+//
+
+
 
 function App() {
-  // cart setup
+	// cart setup
 
-  return (
-    <main>
-      <Navbar />
-      <CartContainer cart={cartItems} />
-    </main>
-  );
+	return (
+		<React.StrictMode>
+			<Provider store={store}>
+				<main>
+					<Navbar />
+					<CartContainer />
+				</main>
+			</Provider>
+		</React.StrictMode>
+	);
 }
 
 export default App;
